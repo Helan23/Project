@@ -6,8 +6,12 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
 var Id = req.body.Id;
 var name = req.body.TeamName;
-console.log(req);
-console.log(Id);
+var location = req.body.Location;
+  var phoneno = req.body.PhoneNumber;
+  var bankname = req.body.BankName;
+   var branchname = req.body.BranchName;
+   var ifsc = req.body.IFSCcode;
+    var accountno = req.body.AccountNumber;
 // Validate request
   if (!(req.body.Id && req.body.TeamName)) {
     res.status(400).send({
@@ -17,7 +21,13 @@ console.log(Id);
   }
 const team_row ={
 teamId : req.body.Id,
-teamName :req.body.TeamName
+TeamName :req.body.name,
+  Location :req.body.location,
+  PhoneNumber :req.body.phoneno,
+  BankName :req.body.bankname,
+  BranchName :req.body.branchname,
+  IFSCcode : req.body.ifsc,
+  AccountNumber : req.body.accountno
 }
 Team.create(team_row).then(data => {
       res.send(data);
@@ -40,17 +50,4 @@ exports.findAll = (req, res) => {
           err.message || "Some error occurred while retrieving team."
       });
     });
-};
-
-
-
-
-// Find a single Tutorial with an id
-exports.findOne = (req, res) => {
-  
-};
-
-// Update a Tutorial by the id in the request
-exports.update = (req, res) => {
-  
 };
