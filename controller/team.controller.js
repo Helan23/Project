@@ -1,6 +1,6 @@
 const db = require("../models");
 console.log(db);
-const Team = db.team;
+const Team = db.tutorials;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
@@ -20,14 +20,14 @@ var location = req.body.Location;
     return;
   }
 const team_row ={
-teamId : req.body.Id,
-TeamName :req.body.name
-Location :req.body.location,
-  PhoneNumber :req.body.phoneno,
-  BankName :req.body.bankname,
-  BranchName :req.body.branchname,
-  IFSCcode : req.body.ifsc,
-  AccountNumber : req.body.accountno
+teamId : Id,
+TeamName :name,
+Location :location,
+  PhoneNumber :phoneno,
+  BankName :bankname,
+  BranchName :branchname,
+  IFSCcode : ifsc,
+  AccountNumber : accountno
 }
 Team.create(team_row).then(data => {
       res.send(data);

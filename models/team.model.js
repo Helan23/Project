@@ -4,37 +4,37 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
 	primaryKey:true
     },
-    teamName: {
-      type: Sequelize.STRING
+    TeamName: {
+      type: Sequelize.STRING(20)
     },
 Location: {
-      type: Sequelize.STRING,
-	primaryKey:true
+      type: Sequelize.STRING(20)
+	
     },
 	  PhoneNumber: {
       type: Sequelize.INTEGER,
-	primaryKey:true
+	
     },
 	  BankName: {
-      type: Sequelize.STRING,
-	primaryKey:true
+      type: Sequelize.STRING(20)
+	
     },
 	  BranchName: {
-      type: Sequelize.STRING,
-	primaryKey:true
+      type: Sequelize.STRING(20)
+	
     },
 	  IFSCcode: {
       type: Sequelize.INTEGER,
-	primaryKey:true
+	
     },
 	  AccountNumber: {
       type: Sequelize.INTEGER,
-	primaryKey:true
+	
     }, 	  
   });
 
     
-  });
+  
 
   return Team;
 };
